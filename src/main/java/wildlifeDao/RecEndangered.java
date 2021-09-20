@@ -9,13 +9,13 @@ import java.util.List;
 
 public class RecEndangered implements EndangeredInterface {
 
-    Sql2o sql2o= new Sql2o("jdbc:postgresql://localhost:5432/wildlife","Aron","12345");
+    Sql2o sql2o= new Sql2o("jdbc:postgresql://localhost:5432/wildlife","Aron","1234z");
 
 //    public final Sql2o sql2o;
 
-    public RecEndangered(Sql2o sql2o) {
-        this.sql2o = sql2o;
-    }
+//    public RecEndangered(Sql2o sql2o) {
+//        this.sql2o = sql2o;
+//    }
 
 
     @Override
@@ -28,7 +28,7 @@ public class RecEndangered implements EndangeredInterface {
             .getKey();
            endangeredAnimals.setId(id);
          }catch (Sql2oException e){
-             System.out.println("kijana");
+             System.out.println("ERROR");
          }
     }
 
