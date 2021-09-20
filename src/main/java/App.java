@@ -12,9 +12,9 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+        Sql2o sql2o= new Sql2o("jdbc:postgresql://localhost:5432/wildlife","Aron","1234z");
 
-
-        RecEndangered recEndangered = new RecEndangered(sql2o);
+        RecEndangered recEndangered = new RecEndangered();
 
         get("/",(request,response)->{
             Map<String, Object> model = new HashMap<>();
@@ -29,6 +29,7 @@ public class App {
 
         post("/endangered/new",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+
             String name = request.queryParams("name");
             String health = request.queryParams("health");
             String age = request.queryParams("age");
