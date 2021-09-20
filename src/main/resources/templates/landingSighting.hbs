@@ -1,7 +1,16 @@
 {{#partial "content"}}
-    <p>age: {{age}}</p>
-    <p>health: {{health}}</p>
-    <p>locate: {{location}}</p>
-    <p>name: {{name}}</p>
+    {{#if }}
+        {{#each  }}
+            <p>age: {{age}}</p>
+            <p>health: {{health}}</p>
+            <p>locate: {{location}}</p>
+            <p>name: {{name}}</p>
+        {{/each}}
+    {{else}}
+        <p>You have nothing</p>
+    {{/if}}
+
+
+    <a href="/endangered" class="btn btn-lg btn-success col-md-6"> Add animal</a>
 {{/partial}}
 {{> layout.hbs}}
