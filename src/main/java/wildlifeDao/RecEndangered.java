@@ -2,25 +2,19 @@ package wildlifeDao;
 
 import models.EndangeredAnimals;
 import org.sql2o.Connection;
-import org.sql2o.Sql2o;
-import org.sql2o.Sql2oException;
+//import org.sql2o.Sql2o;
+import org.sql2o.*;
+//import org.sql2o.Sql2oException;
+
 
 import java.util.List;
 
 public class RecEndangered implements EndangeredInterface {
-
-    Sql2o sql2o= new Sql2o("jdbc:postgresql://localhost:5432/wildlife","Aron","1234z");
-
-//    public final Sql2o sql2o;
-
-//    public RecEndangered(Sql2o sql2o) {
-//        this.sql2o = sql2o;
-//    }
-
+    Sql2o sql2o= new Sql2o("jdbc:postgresql://localhost:5432/wildlife","kip","1234");
 
     @Override
     public void create(EndangeredAnimals endangeredAnimals) {
-        String sql = "INSERT INTO endangered (name,health,age,location) VALUES(:name,:health,:age,:location)";
+        String sql = "INSERT INTO endangered (name,health,age,location,ranger) VALUES(:name,:health,:age,:location,:ranger)";
          try(Connection con= sql2o.open()){
             int id = (int) con.createQuery(sql,true)
             .bind(endangeredAnimals)
@@ -28,7 +22,7 @@ public class RecEndangered implements EndangeredInterface {
             .getKey();
            endangeredAnimals.setId(id);
          }catch (Sql2oException e){
-             System.out.println("ERROR");
+             System.out.println(e);
          }
     }
 
@@ -56,7 +50,7 @@ public class RecEndangered implements EndangeredInterface {
             con.createQuery(sql)
                     .executeUpdate();
         }catch(Sql2oException e){
-            System.out.println("runnn");
+            System.out.println(e);
         }
 
     }
