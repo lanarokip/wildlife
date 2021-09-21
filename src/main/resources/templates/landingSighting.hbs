@@ -1,16 +1,19 @@
 {{#partial "content"}}
-    {{#if }}
-        {{#each  }}
-            <p>age: {{age}}</p>
-            <p>health: {{health}}</p>
-            <p>locate: {{location}}</p>
-            <p>name: {{name}}</p>
-        {{/each}}
-    {{else}}
-        <p>You have nothing</p>
-    {{/if}}
+    <div class="row">
+        <div class="col-md-3 text-white">
+
+
+                    <p>age: {{age}}</p>
+                    <p>health: {{health}}</p>
+                    <p>locate: {{location}}</p>
+                    <p>name: {{name}}</p>
+                    <p>ranger: {{ranger}}</p>
+
+                <p>You have nothing</p>
+        </div>
 
 
     <a href="/endangered" class="btn btn-lg btn-success col-md-6"> Add animal</a>
+    </div>
 {{/partial}}
 {{> layout.hbs}}
