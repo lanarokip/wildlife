@@ -6,10 +6,10 @@ public abstract class Animal {
     public String name;
     public String type;
 
-    public Animal(String name) {
-        this.name=name;
-        this.type=TYPE;
-    }
+//    public Animal(String name) {
+//        this.name=name;
+//        this.type=TYPE;
+//    }
 
     public int getId() {
         return id;
