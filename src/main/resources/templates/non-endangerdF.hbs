@@ -1,28 +1,8 @@
 {{#partial "content"}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link text-danger" href="/">Home <span class="sr-only">heroes</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="#"> squad</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="#">hero</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <form action="/nonEndangered" method="post">
+    <form action="/nonEndangered/new" method="post">
         <div class="form-group">
             <label for="animal">name of animal</label>
-            <input type="text" class="form-control" id="animal" name="animal" placeholder="animal name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="animal name">
         </div>
         <button type="submit" class="btn btn-success">Add Animal</button>
     </form>
