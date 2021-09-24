@@ -34,29 +34,22 @@ public class App {
 
         post("/endangered/new",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-
             String name = request.queryParams("name");
             String health = request.queryParams("health");
             String age = request.queryParams("age");
             String location = request.queryParams("location");
             String ranger = request.queryParams("ranger");
+            EndangeredAnimals endangeredAnimals =new EndangeredAnimals(name,health,age,location,ranger);
+
+            recEndangered.create(endangeredAnimals);
             model.put("name",name);
             model.put("health",health);
             model.put("age",age);
             model.put("location",location);
             model.put("ranger",ranger);
-            EndangeredAnimals endangeredAnimals =new EndangeredAnimals(name,health,age,location,ranger);
-            recEndangered.create(endangeredAnimals);
             return  new ModelAndView(model,"landingSighting.hbs");
         },new HandlebarsTemplateEngine());
-
-        get("/endangered/new", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            List<EndangeredAnimals> animals = recEndangered.findAll();
-            model.put("animals", animals);
-            return new ModelAndView(model, "landingSighting.hbs");
-        }, new HandlebarsTemplateEngine());
-
+//
         get("/AnimalE",(request, response) ->{
             Map<String,Object>model = new HashMap<String, Object>();
             return new ModelAndView(model,"non-endangerdF.hbs");
@@ -69,7 +62,25 @@ public class App {
             model.put("name",name);
             Not_endangered not_endangered = new Not_endangered(name);
             not_endangeredDao.create(not_endangered);
+            List<Not_endangered>not_endangereds=not_endangeredDao.findAll();
+            not_endangereds.add(not_endangered);
             return new ModelAndView(model,"non_endangeredlanding.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/endangered/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            recEndangered.deleteAll();
+//            not_endangeredDao.deleteAll();
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+//
+        get("/non_endangered/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            not_endangeredDao.deleteAll();
+//            not_endangeredDao.deleteAll();
+            res.redirect("/");
+            return null;
         }, new HandlebarsTemplateEngine());
 
 
