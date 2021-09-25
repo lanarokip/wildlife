@@ -30,6 +30,8 @@ public class EndangeredAnimals extends Animal {
         minstances.add(this);
         this.id = minstances.size();
         this.ranger= ranger;
+
+
     }
 
 
@@ -59,7 +61,6 @@ public class EndangeredAnimals extends Animal {
     public void setId(int id){
         this.id=id;
     }
-
     @Override
     public boolean equals(Object o){
         if (o instanceof Animal){
@@ -68,6 +69,7 @@ public class EndangeredAnimals extends Animal {
         }
         return false;
     }
+
 
 
 

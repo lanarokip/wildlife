@@ -1,0 +1,36 @@
+ id |   name   | health  |  age  | location  | ranger 
+----+----------+---------+-------+-----------+--------
+  1 | dedce    | ill     | Adult | section A | 
+  2 | lkemc    | ill     | Adult | section A | kjwcun
+  3 | kk       | ill     | Adult | section A | 
+  4 | kkjjbn   | ill     | Adult | section A | 
+  5 | jhk      | ill     | Adult | section A | 
+  6 | fvbhnm   | ill     | Adult | section A | 
+  7 | gt       | ill     | Adult | section A | g
+  8 | gt       | ill     | Adult | section A | g
+  9 | gt       | ill     | Adult | section A | g
+ 10 |          | ill     | Adult | section A | 
+ 11 |          | ill     | Adult | section A | 
+ 12 | bnj      | ill     | Adult | section A | 
+ 13 | aro      | heatlth | young | secB      | aro
+ 14 | aro      | heatlth | young | secB      | aro
+ 15 | aro      | heatlth | young | secB      | aro
+ 16 | aro      | heatlth | young | secB      | aro
+ 17 | aro      | heatlth | young | secB      | aro
+ 18 | aro      | heatlth | young | secB      | aro
+ 19 | vbn      | ill     | Adult | section A | 
+ 20 | vbn      | ill     | Adult | section A | 
+ 21 | vbnmm    | ill     | Adult | section A |  m 
+ 22 | vbnmm    | ill     | Adult | section A |  m 
+ 23 | vbnmm    | ill     | Adult | section A |  m 
+ 24 | mm       | ill     | Adult | section A | 
+ 25 | mm       | ill     | Adult | section A | 
+ 26 |          | ill     | Adult | section A | 
+ 27 |          | ill     | Adult | section A | 
+ 28 | kj       | ill     | Adult | section A | 
+ 29 | kj zxcvb | ill     | Adult | section A | bnm
+ 30 | sdfgh    | ill     | Adult | section A | gffggf
+ 31 |          | ill     | Adult | section A | 
+ 32 |          | ill     | Adult | section A | 
+(32 rows)
+
