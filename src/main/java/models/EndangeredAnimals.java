@@ -1,13 +1,22 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EndangeredAnimals extends Animal {
+    public EndangeredAnimals(String health, String age, String location, String ranger) {
+        this.health = health;
+        this.age = age;
+        this.location = location;
+        this.ranger = ranger;
+    }
+
+    private int id;
     private String health;
     private String age;
     private String location;
     private String ranger;
-    private static ArrayList<EndangeredAnimals> minstances =  new ArrayList<EndangeredAnimals>();
+//    private static ArrayList<EndangeredAnimals> minstances =  new ArrayList<>();
 
 
     public static final String TYPE = "endangered";
@@ -19,26 +28,12 @@ public class EndangeredAnimals extends Animal {
     public static final String ADULT = "adult";
 
 
-    public EndangeredAnimals(String name, String health, String age, String location,String ranger){
-//        super(name);
-        this.id =id;
-        this.name=name;
-        this.type=TYPE;
-        this.health= health;
-        this.age=age;
-        this.location=location;
-        minstances.add(this);
-        this.id = minstances.size();
-        this.ranger= ranger;
-
-
-    }
 
 
 
-    public  static ArrayList<EndangeredAnimals> getAll(){
-            return minstances;
-}
+//    public  static ArrayList<EndangeredAnimals> getAll(){
+//            return minstances;
+//}
     public String getLocation(){
         return location;
     }
@@ -61,16 +56,20 @@ public class EndangeredAnimals extends Animal {
     public void setId(int id){
         this.id=id;
     }
+
     @Override
-    public boolean equals(Object o){
-        if (o instanceof Animal){
-            Animal animal = (Animal) o;
-            return (this.getName().equals(animal.getName()));
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EndangeredAnimals that = (EndangeredAnimals) o;
+        return Objects.equals(health, that.health) &&
+                Objects.equals(age, that.age) &&
+                Objects.equals(location, that.location) &&
+                Objects.equals(ranger, that.ranger);
     }
 
-
-
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(health, age, location, ranger);
+    }
 }

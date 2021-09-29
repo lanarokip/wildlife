@@ -1,24 +1,43 @@
 {{#partial "content"}}
-    <div class="row">
-        <div class="col-md-3 text-white">
-
-{{#if "endangered1"}}
-    {{#each "endangered1"}}
-    <p>age: {{age}}</p>
-    <p>health: {{health}}</p>
-    <p>locate: {{location}}</p>
-    <p>name: {{name}}</p>
-    <p>ranger: {{ranger}}</p>
-    {{/each}}
-{{else}}
-     <p>You have nothing</p>
-{{/if}}
 
 
-        </div>
-    </div>
+            <div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Animal Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Health</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Ranger</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each endangeredAll}}
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{name}}</td>
+                            <td>{{health}}</td>
+                            <td>{{age}}</td>
+                            <td>{{ranger}}</td>
+                            <td>{{location}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
 
-    <a href="/endangered" class="btn btn-lg btn-success col-md-6"> Add animal</a>
-    <a href="/endangered/delete" class="btn btn-lg btn-success col-md-6"> delete animal</a>
+
+
+<!--     <p>You have nothing</p>-->
+
+
+
+
+
+    <a href="/endangered" class="btn btn-lg btn-success col-md-6 "> Add animal</a>
+    <a href="/endangered/delete" class="btn btn-lg btn-success col-md-6 mt-5"> delete animal</a>
+    <a href="/endangered/all" class="btn btn-lg btn-success col-md-6 mt-5"> view all endangered Animals</a>
 {{/partial}}
 {{> layout.hbs}}

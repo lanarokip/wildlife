@@ -1,15 +1,13 @@
 {{#partial "content"}}
 
-    {{#if "not_endangereds"}}
-        {{#each "not_endangereds"}}
+        {{#each nonEndangered}}
             <p>animal found was a {{name}} and is not endangered</p>
 
         {{/each}}
-    {{else}}
-        <p>You have nothing</p>
-    {{/if}}
 
 
-    <a href="/non_endangered/delete" class="btn btn-lg btn-success col-md-6"> delete animal</a>
+        <a href="/non_endangered/all" class="btn btn-lg btn-success col-md-6"> view all none endangered animals</a>
+
+    <a href="/non_endangered/delete" class="btn btn-lg btn-success col-md-6 mt-5"> delete animal</a>
 {{/partial}}
 {{> layout.hbs}}

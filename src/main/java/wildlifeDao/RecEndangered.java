@@ -27,9 +27,9 @@ public class RecEndangered implements EndangeredInterface {
     }
 
     @Override
-    public List<EndangeredAnimals> findAll() {
+    public List<EndangeredAnimals> findAll(){
        try( Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM endangeredAnimals")
+            return con.createQuery("SELECT * FROM endangered ")
                     .executeAndFetch(EndangeredAnimals.class);
         }
     }
@@ -37,7 +37,7 @@ public class RecEndangered implements EndangeredInterface {
     @Override
     public EndangeredAnimals findById(int id) {
         try(Connection con = sql2o.open()){
-            return con.createQuery("SELECT * FROM endangeredAnimals WHERE id=:id")
+            return con.createQuery("SELECT * FROM endangered  WHERE id=:id")
                     .addParameter("id",id)
                     .executeAndFetchFirst(EndangeredAnimals.class);
         }

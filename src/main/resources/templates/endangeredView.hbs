@@ -1,0 +1,42 @@
+{{#partial "content"}}
+
+
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Animal Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Health</th>
+                <th scope="col">Age</th>
+                <th scope="col">Ranger</th>
+                <th scope="col">Location</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each endangeredAll1}}
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{name}}</td>
+                    <td>{{health}}</td>
+                    <td>{{age}}</td>
+                    <td>{{ranger}}</td>
+                    <td>{{location}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!--     <p>You have nothing</p>-->
+
+
+
+
+
+    <a href="/endangered" class="btn btn-lg btn-success col-md-6"> Add animal</a>
+    <a href="/endangered/all" class="btn btn-lg btn-success col-md-6"> delete animal</a>
+{{/partial}}
+{{> layout.hbs}}

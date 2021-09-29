@@ -19,12 +19,22 @@ public class RecEndangeredTest {
         assertNotEquals(myid,endangeredAnimals.getId());
     }
     @Test
-    public void createdAnimalCanBeFoundByfindAll() throws Exception {
+    public void createdAnimalCanBeFoundByfindById() throws Exception {
         EndangeredAnimals endangeredAnimals= new EndangeredAnimals("aro","heatlth","young","secB","aro");
         recEndangered.create(endangeredAnimals);
         EndangeredAnimals foundEndangered = recEndangered.findById(endangeredAnimals.getId());
         assertEquals(endangeredAnimals,foundEndangered);
     }
+    @Test
+    public void addedTasksAreReturnedFromgetAll() throws Exception {
+        EndangeredAnimals endangeredAnimals= new EndangeredAnimals("aro","heatlth","young","secB","aro");
+        recEndangered.create(endangeredAnimals);
+        assertEquals(1, endangeredAnimals.getAll().size());
+    }
+//    @Test
+//    public void norecendangerdReturnsEmptyList() throws Exception {
+//        assertEquals(0, recEndangered.findAll().size());
+//    }
 
 //    @Test
 //    public void create() {

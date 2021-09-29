@@ -19,17 +19,12 @@
     </nav>
 
 
-    {{#if not-endangerd}}
-        {{#each not-endangerd}}
+
+        {{#each Not_endangered1}}
             <div class="card col-lg-9">
-                <h1 class="text-center card-title" id="squad"> animal name:{{animal}}</h1>
+                <h1 class="text-center card-title" id="squad"> animal name:{{name}}</h1>
             </div>
         {{/each}}
-    {{else}}
-        <div class="card col-md-12">
 
-            <p id="hero" style="font-size:32px" class="card-text">there is no animal</p>
-        </div>
-    {{/if}}
 {{/partial}}
 {{> layout.hbs}}
